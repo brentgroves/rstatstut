@@ -22,7 +22,7 @@ barplot(mtcars$cyl)             # Doesn't work
 cylinders <- table(mtcars$cyl)  # Create table
 barplot(cylinders)              # Bar chart
 plot(cylinders)                 # Default X-Y plot (lines)
-
+head(cylinders)
 # CLEAN UP #################################################
 
 # Clear environment
