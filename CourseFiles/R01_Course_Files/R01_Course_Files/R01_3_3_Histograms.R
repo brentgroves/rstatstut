@@ -15,16 +15,19 @@ library(datasets)
 head(iris)
 
 # BASIC HISTOGRAMS #########################################
-
+# barplot(iris$Sepal.Length)
 hist(iris$Sepal.Length)
 hist(iris$Sepal.Width)
 hist(iris$Petal.Length)
 hist(iris$Petal.Width)
 
 # HISTOGRAM BY GROUP #######################################
-
+# parameters 3 is for the number of graph rows 
+# 1 is for the number of graph columns
+# https://www.stat.auckland.ac.nz/~paul/R/parMemnonics.html
 # Put graphs in 3 rows and 1 column
 par(mfrow = c(3, 1))
+?mfrow
 
 # Histograms for each species using options
 hist(iris$Petal.Width [iris$Species == "setosa"],
