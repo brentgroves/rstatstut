@@ -27,7 +27,7 @@ hist(iris$Petal.Width)
 # https://www.stat.auckland.ac.nz/~paul/R/parMemnonics.html
 # Put graphs in 3 rows and 1 column
 par(mfrow = c(3, 1))
-?mfrow
+?mfrow no help for parameter meaning
 
 # Histograms for each species using options
 hist(iris$Petal.Width [iris$Species == "setosa"],
@@ -50,6 +50,13 @@ hist(iris$Petal.Width [iris$Species == "virginica"],
   main = "Petal Width for Virginica",
   xlab = "",
   col = "blue")
+
+hist(iris$Petal.Width [iris$Species == "virginica"],
+     xlim = c(0, 3),
+     breaks = 9,
+     main = "Petal Width for Virginica",
+     xlab = "",
+     col = "blue")
 
 # Restore graphic parameter
 par(mfrow=c(1, 1))
