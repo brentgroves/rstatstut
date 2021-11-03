@@ -34,7 +34,8 @@ curve(dnorm(x, mean = mean(lynx), sd = sd(lynx)),
       col = "thistle4",  # Color of curve
       lwd = 2,           # Line width of 2 pixels
       add = TRUE)        # Superimpose on previous graph
-
+dnorm(0, mean = 0, sd = 1)
+dnorm(0)
 # Add two kernel density estimators
 lines(density(lynx), col = "blue", lwd = 2)
 lines(density(lynx, adjust = 3), col = "purple", lwd = 2)
@@ -54,3 +55,4 @@ dev.off()  # But only if there IS a plot
 cat("\014")  # ctrl+L
 
 # Clear mind :)
+help("distributions")
