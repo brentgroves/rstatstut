@@ -26,7 +26,7 @@ hist(iris$Petal.Width)
 # 1 is for the number of graph columns
 # https://www.stat.auckland.ac.nz/~paul/R/parMemnonics.html
 # Put graphs in 3 rows and 1 column
-par(mfrow = c(3, 1))
+par(mfrow = c(3, 2))
 ?mfrow no help for parameter meaning
 
 # Histograms for each species using options
@@ -70,6 +70,6 @@ detach("package:datasets", unload = TRUE)  # For base
 dev.off()  # But only if there IS a plot
 
 # Clear console
-cat("\014")  # ctrl+L
+cat("\14")  # ctrl+L
 
 # Clear mind :)
