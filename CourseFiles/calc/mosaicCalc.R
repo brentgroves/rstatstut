@@ -1,8 +1,35 @@
 #mosaicCalc
 # https://dtkaplan.github.io/RforCalculus/integrals-and-integration.html
-install.packages("mosaicCalc")
-install.packages("mosaic")
+# https://stackoverflow.com/questions/65075846/slice-plot-could-not-find-function-error
+# https://github.com/ProjectMOSAIC/mosaicCalc/issues/4
+
+install.packages("leaflet") 
+install.packages("mosaic") 
+install.packages("formatR") 
+# https://www.r-pkg.org/pkg/mosaic
+devtools::install_github("ProjectMOSAIC/mosaic", ref="beta")
+# Dont know if I need all these
+# install.packages("mosaicCalc") 
+install.packages("rmarkdown") 
+install.packages("pandoc") 
+# https://miktex.org/download
+install.packages("MIKTEX") 
+install.packages("tinytex") 
+install.packages("texi2dvi") 
+
+
+remove.packages("mosaicCalc")
+# book uses function in beta version so install it
+# "Computer-age Calculus with R" 
 devtools::install_github("ProjectMOSAIC/mosaic", build_vignettes = TRUE)
+options(`mosaic:parallelMessage` = FALSE)
+
+install.packages("mosaicModel") 
+install.packages("akima") 
+library(mosaic)
+library(mosaicCalc)
+library(mosaicModel)
+library(akima)
 f <- makeFun( A * x ^  2 ~ x, A = 0.5)
 as_daily_income <- function(yearly_income) {
   yearly_income / 365
