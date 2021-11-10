@@ -55,3 +55,13 @@ slice_plot(
   domain(t = 0:20)
 )
 adapt_seq(0, pi, 25, sin)
+# CLEAN UP #################################################
+
+# Clear packages
+detach("package:datasets", unload = TRUE)  # For base
+
+# Clear plots
+dev.off()  # But only if there IS a plot
+
+# Clear console
+cat("\14")  # ctrl+L
