@@ -8,7 +8,7 @@ library(datasets)  # Load/unload base packages manually
 # LOAD DATA ################################################
 
 # Annual Canadian Lynx trappings 1821-1934
-?lynx
+?lynx # information on data set.
 head(lynx)
 
 # HISTOGRAM ################################################
@@ -24,6 +24,9 @@ hist(lynx,
      main   = paste("Histogram of Annual Canadian Lynx",
                     "Trappings, 1821-1934"),
      xlab   = "Number of Lynx Trapped")
+
+avg <- mean(lynx)
+sd <- sd(lynx)
 
 # Add a normal distribution
 curve(dnorm(x, mean = mean(lynx), sd = sd(lynx)),

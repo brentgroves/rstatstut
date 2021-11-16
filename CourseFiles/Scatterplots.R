@@ -13,17 +13,20 @@ head(mtcars)
 # PLOTS ####################################################
 
 # Good to first check univariate distributions
+# How does weight vary.
 hist(mtcars$wt)
 hist(mtcars$mpg)
+# A few on the high end.
 
 # Basic X-Y plot for two quantitative variables
+dev.off()
 plot(mtcars$wt, mtcars$mpg)
 
 # Add some options
 plot(mtcars$wt, mtcars$mpg,
-  pch = 19,         # Solid circle
-  cex = 1.5,        # Make 150% size
-  col = "#cc0000",  # Red
+  pch = 19,         # Solid circle, point character
+  cex = 1.5,        # Make 150% size, size of circle
+  col = "#cc0000",  # Red, hex color
   main = "MPG as a Function of Weight of Cars",
   xlab = "Weight (in 1000 pounds)",
   ylab = "MPG")
