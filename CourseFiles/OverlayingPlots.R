@@ -24,6 +24,13 @@ hist(lynx,
      main   = paste("Histogram of Annual Canadian Lynx",
                     "Trappings, 1821-1934"),
      xlab   = "Number of Lynx Trapped")
+# From the histogram We don't see the year but we see the
+# sum of years on the y axis.
+# For example most of the years there were less than 
+# 500 lynx trapped.
+# We also can calculate the average number of lynx trapped
+# and the standard deviation or the square root of The variance
+# or the average spread of values around the expected value.
 
 avg <- mean(lynx)
 sd <- sd(lynx)
