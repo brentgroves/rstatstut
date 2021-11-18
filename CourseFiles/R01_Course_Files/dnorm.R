@@ -35,14 +35,25 @@ hist(lynx,
 avg <- mean(lynx)
 sd <- sd(lynx)
 ?dnorm
-dnorm(x, mean = 0, sd = 1, log = FALSE)
 # x, q	vector of quantiles.
 # mean - vector of means.
 # sd vector of standard deviations.
 # Add a normal distribution
 # dnorm gives the density, pnorm gives the distribution function, qnorm gives the quantile function, and rnorm generates random deviates.
+x <- c(1,2,3,4,5,6,7,8,9,10)
+avg <- mean(x)
+sd <- sd(x)
+df <- dnorm(x,avg,sd)
 
-T
+#Next
+# https://r-lang.com/dnorm-function-in-r-with-example/
+# Creating a plot based on the dnorm() function.
+?curve
+curve(dnorm(x,avg,sd))
+dnorm(x, mean = mean(lynx), sd = sd(lynx)
+# d <- dnorm(x, mean = mean(lynx), sd = sd(lynx))
+           
+# x is from the lynx set I think           
 curve(dnorm(x, mean = mean(lynx), sd = sd(lynx)),
       col = "thistle4",  # Color of curve
       lwd = 2,           # Line width of 2 pixels
