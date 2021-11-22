@@ -40,6 +40,25 @@ sd <- sd(lynx)
 # sd vector of standard deviations.
 # Add a normal distribution
 # dnorm gives the density, pnorm gives the distribution function, qnorm gives the quantile function, and rnorm generates random deviates.
+dt <- dnorm(0, mean = 0, sd = 1)
+dt
+dnorm(1:3)
+#The most powerful application of the dnorm() function is that it is in creating a normal distribution plot in R.
+# Let’s find the value of the normal distribution pdf at x=10 with mean=20 and sd=5.
+?seq()
+data <- seq(-3, 3, length = 30)
+dt <- dnorm(data)
+plot(data, dt, type = "l", lwd = 1.5, axes = FALSE, xlab = "", ylab = "")
+# for each element of the sequence dnorm give the density,height, at that x value
+# for a normal distribution.  It has no significance other than this is what
+# a random variables density function would look like it was a normal distribution.
+# NEXT continue https://r-lang.com/dnorm-function-in-r-with-example/
+axis(1, at = -3:3, labels = c("-3s", "-2s", "-1s", "mean", "1s", "2s", "3s"))
+dt
+
+dnorm(0)
+dt <- dnorm(x=10, mean=20, sd=5)
+dt
 x <- c(1,2,3,4,5,6,7,8,9,10)
 avg <- mean(x)
 sd <- sd(x)
