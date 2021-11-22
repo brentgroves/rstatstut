@@ -6,6 +6,42 @@
 library(datasets)  # Load/unload base packages manually
 
 # LOAD DATA ################################################
+?dnorm
+# x, q	vector of quantiles.
+# mean - vector of means.
+# sd vector of standard deviations.
+# Add a normal distribution
+# dnorm gives the density, pnorm gives the distribution function, qnorm gives the quantile function, and rnorm generates random deviates.
+"""
+Dnorm(x,mu,sigma,log) gives the density,pdf. Hieght of a normal curve. The y value given the x value. 
+Upto 4 arguments 
+Default: error, 0, 1, false 
+X – where do you want to know the heights. (0,1,2,3) 
+Mean – mu, where do you want it centered. (2.5,2) 
+Sigma – how wide do you want the bell curve to be. (3,3,3,4,5) 
+Log – logarithm of the values. false/true 
+go whichever vector is the longest, sigma
+iterate through other vector values to give us 5 elements
+for each parameter
+x: 0,1,2,3,0 -- where do you want to know the height 
+mu: 2.5,2,2.5,2,2.5 - where do want it centered
+sigma: 3,3,3,4,5 -- how wide
+"""
+# avoid scientific notation
+options(scipen=999)
+format(v, big.mark = ",") # using big.mark to add commas
+library(scales)
+
+x <- c(0,1,2,3)
+mu <- c(2.5,2)
+sigma <- c(3,3,3,4,5)
+df <- dnorm(x,mu,sigma)
+curve(dnorm(x,mu,sigma))
+# format(big_number, scientific = FALSE)
+
+x <- c(3,3,4,4,5,4,4,4,3)
+# a random variable being within a range of values.
+
 
 # Annual Canadian Lynx trappings 1821-1934
 ?lynx # information on data set.
@@ -15,6 +51,11 @@ head(lynx)
 
 # Default
 hist(lynx)
+
+# avoid scientific notation
+options(scipen=999)
+format(v, big.mark = ",") # using big.mark to add commas
+library(scales)
 
 # Add some options
 hist(lynx,
@@ -31,7 +72,8 @@ hist(lynx,
 # We also can calculate the average number of lynx trapped
 # and the standard deviation or the square root of The variance
 # or the average spread of values around the expected value.
-
+# Clear environment
+rm(list = ls())
 avg <- mean(lynx)
 sd <- sd(lynx)
 ?dnorm
@@ -68,10 +110,30 @@ df <- dnorm(x,avg,sd)
 # https://r-lang.com/dnorm-function-in-r-with-example/
 # Creating a plot based on the dnorm() function.
 ?curve
+"""
+Dnorm(x,mu,sigma,log) gives the density,pdf. Hieght of a normal curve. The y value given the x value. 
+Upto 4 arguments 
+Default: error, 0, 1, false 
+X – where do you want to know the heights. (0,1,2,3) 
+Mean – mu, where do you want it centered. (2.5,2) 
+Sigma – how wide do you want the bell curve to be. (3,3,3,4,5) 
+Log – logarithm of the values. false/true 
+go whichever vector is the longest, sigma
+iterate through other vector values to give us 5 elements
+for each parameter
+"""
+# make a histogram in [R], and the normal curve that describes the histogram as follows:
+w<-rnorm(1000, mean=10, sd=2) 
+hist(w, col="red", freq=F, xlim=10+c(-5,5))
+curve( dnorm(x, mean=10,sd=2), 5, 15, add=T, col="blue")
+# error 'expr' must be a function, or a call or an expression containing 'x'
+curve(dnorm(w, mean=mean(w), sd=sd(w)), y = 5, to = 15, add=T, col="blue")
+# 
+curve(dnorm(x, mean=mean(w), sd=sd(w)), y = 5, to = 15, add=T, col="blue")
+
 curve(dnorm(x,avg,sd))
-dnorm(x, mean = mean(lynx), sd = sd(lynx)
+curve(dnorm(x, mean = mean(lynx), sd = sd(lynx)))
 # d <- dnorm(x, mean = mean(lynx), sd = sd(lynx))
-           
 # x is from the lynx set I think           
 curve(dnorm(x, mean = mean(lynx), sd = sd(lynx)),
       col = "thistle4",  # Color of curve
