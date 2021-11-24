@@ -40,6 +40,7 @@ curve(dnorm(x,mu,sigma))
 # format(big_number, scientific = FALSE)
 
 x <- c(3,3,4,4,5,4,4,4,3)
+sd(x)
 # a random variable being within a range of values.
 
 
@@ -74,6 +75,7 @@ hist(lynx,
 # or the average spread of values around the expected value.
 # Clear environment
 rm(list = ls())
+ls() # the variables in the environment
 avg <- mean(lynx)
 sd <- sd(lynx)
 ?dnorm
@@ -81,10 +83,27 @@ sd <- sd(lynx)
 # mean - vector of means.
 # sd vector of standard deviations.
 # Add a normal distribution
-# dnorm gives the density, pnorm gives the distribution function, qnorm gives the quantile function, and rnorm generates random deviates.
+# dnorm gives the density, pnorm gives the distribution function, 
+# qnorm gives the quantile function, and rnorm generates random deviates.
 dt <- dnorm(0, mean = 0, sd = 1)
 dt
+# The probability of the value being 0?
+# Default: error, 0, 1, false 
 dnorm(1:3)
+dnorm(1:3,0,1) # same values since 0,1 are default params
+dnorm(1:3,2,1) # now the mean is a 2
+curve(dnorm(1:3,2,1))  # can't do this with these values of dnorm
+?curve
+curve(sin, -2*pi, 2*pi, xname = "t")
+"""
+Draws a curve corresponding to a function over the interval [from, to]. 
+curve can plot also an expression in the variable xname, default x.
+   curve(expr, from = NULL, to = NULL, n = 101, add = FALSE,
+         type = "l", xname = "x", xlab = xname, ylab = NULL,
+         log = NULL, xlim = NULL, ...)   
+"""
+plot(dnorm(1:3,2,1))  # cant do this but there are only 3 points
+1:3 # 1,2,3
 #The most powerful application of the dnorm() function is that it is in creating a normal distribution plot in R.
 # Let’s find the value of the normal distribution pdf at x=10 with mean=20 and sd=5.
 ?seq()
